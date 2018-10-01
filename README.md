@@ -71,3 +71,25 @@ using to access the host.
         
         ssh-keygen -C "youremailid"
         pbcopy < ~/.ssh/id_rsa_digitalocean.pub
+        ls -a (to see hidden files)
+        
+###### Windows: 
+If you have Git for Windows (which you should), ssh-keygen command should be available: https://gitforwindows.org/
+You can read more about this here
+Another option is to use https://www.ssh.com/ssh/putty/windows/puttygen
+      
+      
+### setup ssh for github
+1) generate the key 
+        
+        ssh-keygen -t rsa -b 4096 -C "karkra.nikhil@gmail.com"
+
+2) copy the key 
+ 
+       pbcopy < ~/.ssh/nik-github.pub
+       
+3) add the key
+       
+       ssh-add ~/.ssh/github_rsa
+       
+4) go to github account ---> settings ---> go to  SSH keys & GPG key --> add new SSH --->paste your key that you have copied and save.      
