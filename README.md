@@ -93,3 +93,56 @@ Another option is to use https://www.ssh.com/ssh/putty/windows/puttygen
        ssh-add ~/.ssh/github_rsa
        
 4) go to github account ---> settings ---> go to  SSH keys & GPG key --> add new SSH --->paste your key that you have copied and save.      
+
+
+## DAY 3
+### Performance
+<p>One of the first things you will realize as a web developer is that the Internet speeds vary for everybody.</p>
+<p>All big companies prioritize Fast User experience because they know that people today are used to not waiting around</p>
+<p>Now there are infinite ways to make your code more performant and your web site faster.</p>
+
+<h5>Each second of delay decreases customer satisfaction and possibly money.</h5>
+<h6>Three areas to improve performance</h6>
+<ul>
+<li>Front end because the front end device needs time to render the page on the screen.</li>
+<li>we can improve the transfer of our files over the wire network latency which is every request needs time to travel from client to the server and back to our network.</li>
+<li>Third is we can improve the processing done on the backend or back in processing the web server needs time to load data maybe from the database and maybe even assemble the website before it</li>
+</ul>
+
+#### Front end ways to improve performance
+        
+        1) Critical render path
+        2) Optimized code
+        3) Progressive web app
+        
+#### Network performance ways to improve performance
+        
+        1) Minimize the files
+        2) Minimize delivery
+
+#### Backend way to improve performance
+        
+        1)CDNs
+        2)Caching
+        3)Load balancing
+        4)DB scaling
+        5)GZIP
+        
+ #Network performance
+  <p>Every time i open up the browser and visit a web site we have to send a request somewhere to a server to get the files off of that computer and back to the way to us.</p>      
+  <p>The more kilobytes a user needs to download the longer it takes to load the website.</p>      
+  
+  ###### solution
+  By minimizing the text files like a html, CSS and Javascript and by optimizing images and using smaller images when your site is viewed on a smaller screen size. For example therefore there is less data we need to transfer over the wire.
+  <p><b>Files</b> can be Minified by the Uglify.js or any other way </p>
+  <p><b>Images</b>
+        
+        1)JPEG - image with lots of color such as photographs. The one downside with JPEG is that they don't really allow for transparency.
+        2)Gif - less in size, for small animation
+        3)png - Mostly used for logo, limit the numbers that you can use, you can add tranperency to them.
+        4)SVG - scalable vector graphics , you can expand an SVG to several times its original size and it will be just a sharp and justice clear, can customize using css,
+        5) new formats recently launched jpeg 2000, jpecg x, web p
+    
+ <p>Pick the right format based on requirement and then compress them as much as you can without minimizing their quality.
+  
+  
