@@ -84,11 +84,11 @@ using to access the host.
 <p>Server need to keep track of active sessions in database</p>
 
 ###### Basic flow is
-1) User login with their credentails
-2)Server verify the user and create a session then stored in database and send the cookie back to client.
-3)A cookie with session ID is get stored in users browser
-4)On Every request the session ID is verified againt the DB and if valid request processed
-5)Once the user logged out of the app, the session is destroyed both client and server side.
+<p>1) User login with their credentails</p>
+<p>2)Server verify the user and create a session then stored in database and send the cookie back to client.</p>
+<p>3)A cookie with session ID is get stored in users browser</p>
+<p>4)On Every request the session ID is verified againt the DB and if valid request processed</p>
+<p>5)Once the user logged out of the app, the session is destroyed both client and server side.</p>
 
 
 ##### 2. Morder Way - Token Based
@@ -98,18 +98,18 @@ using to access the host.
 <p>Token is generally sent as an additional Authorization header in form of Bearer(JWT).</p>
 
 ###### Basic flow is
-1- User login with their credentails
-2- Server verifies the credentials if correct then returns a signed token
-3- This token is stored in client-side, most commonly in local storage - but can be stored in session storage
-or a cookie as well
-4- Subsequent requests to the server include this token as an additional Authorization header. 
-5- The server decodes the JWT and if the token is valid processes the request
-6- Once a user logs out, the token is destroyed client-side, no interaction with the server is necessary.
+<p>1- User login with their credentails</p>
+<p>2- Server verifies the credentials if correct then returns a signed token</p>
+<p>3- This token is stored in client-side, most commonly in local storage - but can be stored in session storage
+or a cookie as well</p>
+<p>4- Subsequent requests to the server include this token as an additional Authorization header. </p>
+<p>5- The server decodes the JWT and if the token is valid processes the request</p>
+<p>6- Once a user logs out, the token is destroyed client-side, no interaction with the server is necessary.</p>
 
 ##### Stateless Advantages
-1) Reduce memory usage - unlike session get saved in DB
-2) Easier to support multiple server - unline in session based sync the session in multiple server is really tough
-3) Reduce session expiration problems.
+<p>1) Reduce memory usage - unlike session get saved in DB</p>
+<p>2) Easier to support multiple server - unline in session based sync the session in multiple server is really tough</p>
+<p>3) Reduce session expiration problems.</p>
 
 ###JSON web token (JWT)
 <p>JWT is just a json object that has three main components.</p>
