@@ -71,3 +71,53 @@ using to access the host.
         
         ssh-keygen -C "youremailid"
         pbcopy < ~/.ssh/id_rsa_digitalocean.pub
+        
+        
+        
+## DAY 3
+
+### Basic of authentication
+
+##### 1. Traditional Way - Cookie/session based
+
+<p>Cookies based authentication is stateful. It means that an authentication record or session should be kept both server and client side.</p>
+<p>Server need to keep track of active sessions in database</p>
+
+###### Basic flow is
+1) User login with their credentails
+2)Server verify the user and create a session then stored in database and send the cookie back to client.
+3)A cookie with session ID is get stored in users browser
+4)On Every request the session ID is verified againt the DB and if valid request processed
+5)Once the user logged out of the app, the session is destroyed both client and server side.
+
+
+##### 2. Morder Way - Token Based
+
+<p>Token-based authentication is stateless. The server does not keep the record of which users are logged in or which JWTs have been issued.</p>
+<p>Each request to the server is accompanied by a token which the server uses to verify the request</p>
+<p>Token is generally sent as an additional Authorization header in form of Bearer(JWT).</p>
+
+###### Basic flow is
+1- User login with their credentails
+2- Server verifies the credentials if correct then returns a signed token
+3- This token is stored in client-side, most commonly in local storage - but can be stored in session storage
+or a cookie as well
+4- Subsequent requests to the server include this token as an additional Authorization header. 
+5- The server decodes the JWT and if the token is valid processes the request
+6- Once a user logs out, the token is destroyed client-side, no interaction with the server is necessary.
+
+##### Stateless Advantages
+1) Reduce memory usage - unlike session get saved in DB
+2) Easier to support multiple server - unline in session based sync the session in multiple server is really tough
+3) Reduce session expiration problems.
+
+###JSON web token (JWT)
+<p>JWT is just a json object that has three main components.</p>
+<p>It has header, a payload and a signature</p>
+<p><b>Header - </b>It will describe the token and say something like this is the type of token that i am using in JWT</p>
+<p><b>Signature - </b>It tell about the algorithm that are we using for singnature.</p>
+<p><b>Payload - </b>It has multiple properties.like, sub - which is the subscriber or the user id, expiry date, issued date, information about user like name or this role.</p><p>Finally this is a way to enure the integrity of our JSON web token. All of those components are base64 encoded and combined as big string and passed as a header or a query parameter.<p>
+
+<p>JWT.io commonly used to create or to debug web token</p>
+
+   
